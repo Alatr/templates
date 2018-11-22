@@ -1,0 +1,11 @@
+/node_modules/
+/dist/
+/.git/
+/app/sass/
+/**/_backstage
+/**/Thumbs.db
+/**/*.DS_Store
+/**/package-lock.json
+/**/gulpfile.js
+/**/smartgrid.js
+/**/package.json
