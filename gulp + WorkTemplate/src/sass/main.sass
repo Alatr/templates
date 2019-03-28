@@ -1,0 +1,120 @@
+@import "smart-grid"
+@import "vars"
+@import "fonts"
+@import "libs"
+@import "interface"
+@import "animation"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+*
+	box-sizing: border-box
+	&::after, &::before
+		box-sizing: border-box
+body
+	min-width: 320px
+	position: relative
+	line-height: 1.5em
+	font-family: $default-font
+	overflow-x: hidden
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+img
+	width: 100%
+
+.debug
+	z-index: 999999
+	+debug(rgba(0,0,0,.5), 1px solid #ff0)
+
++reset()
+
+.container
+	+wrapper()
+
+
+.productItems
+	+row-flex();
+	justify-content: space-around	
+	
+.productItem
+	padding: 20px
+	margin: 20px 0		
+	border-radius: 5px
+	background-color: #fff
+
+	+col();
+	+size(4);
+	+size-md(6);
+	+size-xs(12);
+	&__img
+
+	&__title
+		margin-top: 15px
+		color: $accent
+		font-size: 20px
+		font-weight: 700
+		text-align: center
+		text-transform: uppercase
+	&__descr
+		margin: 15px 0
+		font-size: 18px
+.page404
+  &-wrap
+    width: 100vw
+    height: 100vh
+    background-color: lighten($accent, 5%)
+    display: flex
+    justify-content: center
+    align-items: center
+    color: $wc
+  &__title
+    margin-bottom: 50px
+    font-weight: 700
+    line-height: normal
+    font-size: 150px
+    text-align: center
+    animation: tada 3s infinite
+    +to(578px)
+      font-size: 70px
+      margin-bottom: 30px
+    &-small
+      display: block
+      font-size: 50px
+      +to(578px)
+        font-size: 30px
+  &__subtitle
+    padding: 0 10px
+    text-align: center
+    font-size: 20px
+    margin-bottom: 30px
+  .link-wrap
+    display: flex
+    justify-content: space-between
+    +to(578px)
+      flex-direction: column
+    a
+      min-width: 220px
+      margin-right: 0
+      padding: 10px 0
+      justify-content: center
+      color: $wc
+      text-decoration: none
+      span
+        z-index: 1
+      &::before
+        z-index: 0
+      +to(578px)
+        margin: 20px auto
+        width: 70%
+        min-width: 200px
+@import "class"
