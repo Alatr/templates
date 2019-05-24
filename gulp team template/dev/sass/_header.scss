@@ -1,0 +1,589 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 54px;
+  background-color: $main-color;
+  z-index: 30;
+  .container{
+    height: 100%;
+  }
+  .row{
+    @include row-flex();
+    height: 100%;
+    justify-content: space-between;
+  }
+  .icon{
+    margin-right: 10px;
+    width: 8px;
+    height: 10px;
+    fill: $gold;
+    @include to(600px){
+      width: 20px;
+      height: 20px;
+    }
+  }
+  &-left-wrapper{
+    height: 54px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+  &__btn-call{
+    margin-right: 20px;
+    align-self: center;
+    @include to(992px){
+      margin-right: 10px;
+    }
+    @include to(600px){
+      margin-right: 0;
+    }
+  }
+  &__menu-btn:not(#some){
+    display: none;
+    @include to(600px){
+      position: static;
+      display: flex;
+      order: 4;
+      transform: translateY(0);
+    }
+  }
+}
+.webcam-link,
+.header__tel-text,
+.menu-btn {
+  @include to(600px){
+    display: none;
+  }
+}
+.header-icon-envelop {
+  @include from(600px){
+    display: none;
+  }
+}
+.header__btn-call{
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include to(600px){
+    order: 3;
+    width: auto;
+    border: none;
+    box-shadow: none;
+    .icon{
+      margin-right: 0;
+    }
+    .span-animation{
+      display: none;
+    }
+  }
+}
+.header__tel-link{
+  @include to(600px){
+    order: 2;
+  }
+}
+.webcam-link, .header__tel-link{
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  font-family: $default-font;
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.71px;
+  text-decoration: none;
+  color: $wc;
+  @include to(992px){
+    margin-right: 10px;
+  }
+  @include to(600px){
+    margin-right: 0;
+  }
+}
+.logo{
+  width: 112px;
+  display: flex;
+  align-items: center;
+  @include to(600px) {
+    width: 100px;
+  }
+}
+.language {
+  position: relative;
+  display: flex;
+  align-items: center;
+  @include to(600px){
+    margin-right: 10px;
+    order: 1;
+  }
+  a {
+    font-family: $default-font;
+    font-size: 11px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.71px;
+    color: $wc;
+    text-decoration: none;
+  }
+}
+
+.language-btn {
+  position: relative;
+  margin-top: -5px;
+  margin-left: 15px;
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  @include to(992px){
+    margin-left: 0;
+  }
+}
+
+.language-btn::before {
+  margin-top: -3px;
+  width: 12px;
+  height: 12px;
+  display: block;
+  content: '';
+  transform: rotate(45deg);
+  border-right: 3px solid #ffffff;
+  border-bottom: 3px solid #ffffff;
+  transition: all 0.4s;
+  @include to(600px){
+    width: 10px;
+    height: 10px;
+  }
+}
+
+.language-btn:hover {
+  cursor: pointer;
+}
+
+.language-btn:hover::before {
+  transform: rotate(-135deg);
+}
+
+.language:hover .lang--active {
+  margin-top: -38px;
+  line-height: 20px;
+  transition: all 0.4s;
+}
+
+.lang__item {
+  line-height: 15px;
+  box-sizing: border-box;
+}
+
+.lang__item .underline--black:focus {
+  outline: 1px rgba(255, 255, 255, 0.6) solid;
+}
+
+.lang__item .underline--black::after {
+  background-color: #000000;
+}
+
+.lang_dropdown {
+  position: absolute;
+  top: 20px;
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+  width: 46.33px;
+  max-height: 0;
+  overflow: hidden;
+  list-style: none;
+  transition: .35s;
+}
+
+.lang-dropdown--active {
+  max-height: 60px;
+  opacity: 1;
+}
+
+.lang--active {
+  display: block;
+}
+
+.lang--active:focus {
+  outline: 1px rgba(255, 255, 255, 0.6) solid;
+}
+
+
+.menu-wrap{
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  z-index: 50;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  background: $main-color url('../img/menu.jpg');
+  background-size: cover;
+  pointer-events: auto;
+  backface-visibility: hidden;
+  @include to(992px){
+    padding-top: 20px;
+    align-items: flex-start;
+  }
+}
+
+.menu-list{
+  padding: 0 140px 0 250px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  @include to(992px){
+    align-self: center;
+    justify-content: center;
+  }
+  @include to(767px){
+    align-self: flex-start;
+    padding: 0 0px 0 120px;
+  }
+  .has-children{
+    opacity: 0;
+    width: 260px;
+    font-family: $default-font;
+    @include to(1440px){
+      margin: 0 0 40px 0;
+    }
+    @include to(576px){
+      width: 215px;
+    }
+    .menu__title{
+      display: block;
+      margin: 0 0 30px 0;
+      padding: 5px 0;
+      font-size: 18px;
+      font-weight: 400;
+      color: $main-color;
+      letter-spacing: 0.45px;
+      text-transform: uppercase;
+      @include to(1440px){
+        margin: 0 0 0 0;
+      }
+      @include to(576px){
+        font-size: 14px;
+      }
+    }
+    .sub-menu{
+      li{
+        a{
+          font-size: 16px;
+          color: $wc;
+          @include to(576px){
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.close-menu-btn{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 90px;
+  height: 90px;
+  background-color: $dirt;
+  border: none;
+  transition: all 0.3s;
+  @include to(768px){
+    width: 50px;
+    height: 50px;
+  }
+  &:hover{
+    transform: rotate(90deg);
+    &::before,&::after{
+      width: 100%;
+    }
+  }
+  &::before,&::after{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 80%;
+    height: 3px;
+    content: '';
+  }
+  &::before{
+    background-color: $gold  ;
+    transform: translate(-50%,-50%) rotate(45deg);
+  }
+  &::after{
+    background-color: $gold;
+    transform: translate(-50%,-50%) rotate(-45deg);
+  }
+}
+
+.menu-aside{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  padding: 40px 0 0 0;
+  display: flex;
+  width: 200px;
+  height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  background-color: $main-color;
+  transition: all 1.3s linear 1.5s;
+  transform: translateX(-65%);
+
+  
+  @include to(1440px){
+    width: 150px;
+  }
+  @include to(768px){
+    width: 100px;
+  }
+  &__title{
+    margin-bottom: 40px;
+  }
+  &__list{
+    li{
+      a{
+        margin-bottom: 10px;
+        display: block;
+        font-family: $default-font;
+        font-size: 12px;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 0.3px;
+        color: $gold;
+        text-decoration: none;
+        &:hover{
+          color: $wc
+        }
+
+      }
+    }
+  }
+}
+
+
+.mainForm {
+margin: 0 auto;
+padding: 40px 50px;
+display: flex;
+max-width: 600px;
+width: 50%;
+flex-direction: column;
+background-color: $main-color;
+@include to(1200px) {
+  padding: 20px 15px;
+}
+@include to(468px) {
+  padding: 20px 10px;
+}
+@include to(768px) {
+  width: 60%; 
+}
+@include to(668px) {
+  width: 70%; 
+}
+@include to(568px) {
+  width: 80%; 
+}
+@include to(468px) {
+  width: 100%; 
+}
+.intl-tel-input.allow-dropdown input, .intl-tel-input.allow-dropdown input[type=tel], .intl-tel-input.allow-dropdown input[type=text], .intl-tel-input.separate-dial-code input, .intl-tel-input.separate-dial-code input[type=tel], .intl-tel-input.separate-dial-code input[type=text] {
+  padding-left: 16.5%; 
+  @include to(666px){
+    padding-left: 12.5%;
+  }
+}
+.intl-tel-input.allow-dropdown .flag-container, .intl-tel-input.separate-dial-code .flag-container {
+  left: 5%; 
+  @include to(666px){
+    left: -2%;
+  }
+}
+.main-form__title {
+  position: relative;
+  margin-bottom: 30px;
+  color: $wc;
+  @include to(1200px) {
+    font-size: 20px; }
+  @include to(468px) {
+    margin-bottom: 40px;
+    font-size: 16px; }
+  button {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    transform: translateY(-50%);
+    transition: 0.3s all;
+    @include to(468px) {
+      width: 20px;
+      height: 20px;
+    }
+    &:hover{
+      transform: translateY(-50%) rotate(90deg) scale(1.05)
+    }
+    &::after,
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: block;
+      width: 100%;
+      height: 2px;
+      content: '';
+      background-color: $gold;
+    }
+    &::after {
+      transform: translate(-50%,-50%) rotate(45deg);
+    }
+    &::before {
+      transform: translate(-50%,-50%) rotate(-45deg);
+    } 
+  }
+  } 
+}
+
+.mainForm {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @include to(1200px) {
+    justify-content: center;
+  }
+
+  &-wrap {
+    position: relative;
+    margin-bottom: 50px;
+    padding-left: 10px;
+    flex-basis: 45%;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    background: rgba(176, 169, 111, 0.3);
+    @include to(1200px) {
+      flex-basis: 80%;
+    }
+
+    @include to(666px) {
+      flex-basis: 95%;
+    }
+  }
+  &-wrap.input-focus-js {
+    .mainForm__text {
+      transform: translate(-30px, -65px);
+      @include to(666px){
+        transform: translate(0, -55px);
+
+      }
+    }
+  }
+
+  &-wrap.requaired {
+    &::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      display: block;
+      border: 20px solid transparent;
+      border-top: 20px solid $gold;
+      border-right: 20px solid $gold;
+
+      @include to(666px) {
+        border: 15px solid transparent;
+        border-top: 15px solid $gold;
+        border-right: 15px solid $gold;
+      }
+    }
+
+    &::before {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      right: 9px;
+      top: 5px;
+      display: block;
+      content: "*";
+      color: #fff;
+      z-index: 2;
+      font-size: 25px;
+      
+      @include to(666px) {
+        top: 1px;
+        right: 6px;
+      }
+    }
+  }
+
+  .inputtelmask {
+    width: 100%;
+  }
+
+  &__text {
+    position: absolute;
+    top: 50%;
+    padding-left: 30px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 400;
+    color: $gold;
+    transform: translateY(-50%);
+    transition: all 0.5s;
+    @include to(666px){
+      padding-left: 0;
+      font-size: 13px;
+    }
+    .wrap-icon {
+      position: relative;
+      margin-right: 30px;
+      width: 25px;
+      height: 25px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      fill: $gold;
+      @include to(666px){
+        margin-right: 15px;
+      }
+    }
+  }
+  &__input {
+    height: 50px;
+    position: relative;
+    background: transparent;
+    border: none;
+    &::placeholder{
+      color: $gold;
+    }
+    @include to(666px) {
+      height: 40px;
+    }
+  }
+}
+
+.sand-form{
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  color: $wc;
+}
+

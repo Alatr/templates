@@ -1,0 +1,428 @@
+// Global class
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.js-no-valid:not(#some){
+  border-bottom: 1px solid red
+}
+.tablet--hidden:not(#some){
+  @include to(768px){
+    display: none;
+  }
+}
+.desctop--hidden:not(#some){
+  @include from(769px){
+    display: none;
+  }
+}
+.sl {
+  &__btn {
+    position: absolute;
+    top: calc(50% - 25px);
+    width: 50px;
+    height: 50px;
+    background-color: #b0a96f;
+    border: none;
+    outline-color: #dad189;
+    cursor: pointer;
+    z-index: 5;
+  }
+
+  &__prev {
+    left: 140px;
+    transform: rotate(180deg);
+  }
+
+  &__next {
+    right: 140px;
+  }
+}
+
+.title{
+  position: relative;
+  color: $wc;
+  font-family: $default-font;
+  font-size: 30px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+  text-align: center;
+  line-height: 70px;
+  padding: 0;
+  margin: 0;
+  &:after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: inline-block;
+    height: 70px;
+    width: 60px;
+    background: url("../img/FRANKLIN.png")no-repeat center;
+    background-size: cover;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media screen and (max-width: 480px){
+  .title{
+    font-size: 20px;
+    letter-spacing: 0.6px;
+    &:after{
+      height: 44px;
+      width: 37px;
+    }
+  }
+}
+
+._color--gold{
+  color: $gold;
+}
+.main{
+  padding-top: 54px;
+  background-color: $dirt;
+  overflow: hidden;
+}
+.header{
+  overflow: hidden;
+}
+
+.breadcrumb{
+  margin: 0 0 10px 0;
+  padding-left: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.32px;
+  text-transform: uppercase;
+  z-index: 6;
+  li{
+    margin: 0 5px;
+    display: flex;
+    align-items: center;
+    color: $gold;
+    list-style: none;
+    a{
+      color: $gold;
+      margin-right: 10px;
+      text-decoration: none;
+    }
+    &:last-child{
+      color: $wc;
+    }
+  }
+}
+
+@media screen and (max-width: 480px){
+  .breadcrumb{
+    font-size: 10px;
+    padding-left: 0px;
+  }
+}
+
+.menu-btn:not(#some) {
+  position: fixed;
+  background-color: $main-color;
+}
+
+.menu-btn {
+  position: fixed;
+  top: 50%;
+  left: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 70px;
+  width: 70px;
+  background-color: $main-color;
+  border: none;
+  z-index: 5;
+  transform: translateY(-50%);
+  &-text{
+    color: $wc;
+    font-size: 11px;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.71px;
+    margin-bottom: 7px;
+    pointer-events: none;
+  }
+  &-line {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: none;
+    span{
+    display: inline-block;
+    height: 2px;
+    width: 90%;
+    margin-bottom: 7px;
+    background-color: $gold;
+    pointer-events: none;
+    &:last-child{
+      background-color: $wc;
+      width: 70%;
+      pointer-events: none;
+
+    }
+  }
+  }
+
+}
+
+.button{
+  position: relative;
+  overflow: hidden;
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: $wc;
+  letter-spacing: 0.71px;
+  background-color: transparent;
+  border: none;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+  &::before{
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    bottom: 2px;
+    width: 50%;
+    height: 100%;
+    content: "";
+    background-color: rgba(255,255,255,0.01);
+    transition: all 0.3s;
+    pointer-events: none;
+  }
+  &:hover{
+    .span-animation{
+      animation-play-state: running;
+    }
+    &::before{
+      background-color: rgba(24, 6, 6, 0.05);
+    }
+  }
+  .span-animation-1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, #47442a,#b0a96f,#47442a);
+    animation: span_animate1 1s linear infinite paused;
+  }
+  .span-animation-2{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom, #47442a,#b0a96f,#47442a);
+    animation: span_animate2 1s linear infinite paused;
+  }
+  .span-animation-3{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to left, #47442a,#b0a96f,#47442a);
+    animation: span_animate3 1s linear infinite paused;
+  }
+  .span-animation-4{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to top, #47442a,#b0a96f,#47442a);
+    animation: span_animate4 1s linear infinite paused;
+  }
+}
+
+.button__main:not(#some) {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+  &:hover {
+    background-color: $main-color;
+    .span-animation {
+      animation-play-state: running;
+    }
+
+    &::before {
+      background-color: rgba(24, 6, 6, 0.05);
+    }
+  }
+
+  .span-animation-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, #a999fc, #454158, #a999fc);
+    animation: span_animate1 1s linear infinite paused;
+  }
+
+  .span-animation-2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom, #a999fc, #454158, #a999fc);
+    animation: span_animate2 1s linear infinite paused;
+  }
+
+  .span-animation-3 {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to left, #a999fc, #454158, #a999fc);
+    animation: span_animate3 1s linear infinite paused;
+  }
+
+  .span-animation-4 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to top, #a999fc, #454158, #a999fc);
+    animation: span_animate4 1s linear infinite paused;
+  }
+}
+.button-bg--fill{
+  width: 100%;
+  text-align: center;
+  background-color: $gold;
+}
+
+.button-string{
+  padding: 0;
+  font-size: 13px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.32px;
+  color: $gold;
+  background-color: transparent;
+  border: none
+}
+
+.button-size--md{
+  width: 190px;
+  height: 40px;
+  @include to(1200px){
+    width: 160px;
+  }
+  @include to(992px){
+    height: 35px;
+  }
+}
+
+.svg-arrow{
+  margin-right: -1px;
+  display: flex;
+  align-items: center;
+  width: 7px;
+  height: 9px;
+  fill: $gold;
+}
+
+.visible--hidden:not(#some){
+  display: none;
+  // opacity: 0;
+  // visibility: hidden;
+  // z-index: -100;
+}
+.overflow--hidden:not(#some){
+  overflow: hidden;
+}
+
+.section__title{
+  position: relative;
+  margin: 20px 0 0 0;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 2em;
+  text-transform: uppercase;
+  letter-spacing: 0.9px;
+  color: $wc;
+  text-align: center;
+  @include to(768px){
+    font-size: 20px;
+  }
+  .latter-f{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60px;
+    height: 71px;
+    opacity: 0.2;
+    transform: translate(-50%, -50%);
+    @include to(768px){
+      width: 40px;
+    }
+  }
+  span{
+    opacity: 0;
+    display: inline-block;
+    animation-delay: 0.3s
+  }
+}
+
+.hover-underline{
+  position: relative;
+  &::after{
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    display: block;
+    height: 1px;
+    width: 100%;
+    content: '';
+    transform: scale(0);
+  }
+  &:hover{
+    &::after{
+      transition: 0.4s;
+      transform: scale(1);
+    }
+  }
+}
+.underline-color--white {
+  &::after{
+    background-color: $wc;
+  }
+}
+.underline-color--dark {
+  &::after{
+    background-color: $main-color;
+  }
+}
+
+.gradient__top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 30%;
+  width: 100%;
+  background: linear-gradient(180deg, $bc, transparent);
+  opacity: 0.7;
+  z-index: 4;
+}

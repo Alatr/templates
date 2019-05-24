@@ -1,0 +1,304 @@
+.filter-results{
+  @include row-flex();
+  padding: 30px 0;
+  justify-content: space-between;
+  @include to(1200px){
+    justify-content: space-around;
+  }
+  @include to(576px){
+    padding: 15px 0;
+    justify-content: center;
+  }
+}
+
+.filter-item{
+  @include col();
+  @include size(3);
+  position: relative;
+  padding: 20px 15px 0 15px;
+  transition: 0.3s all;
+  &:hover{
+    background-color: $main-color;
+    transform: scale(1.02);
+    .filter-item__button{
+      color: $main-color;
+    }
+    
+  }
+  @include to(1200px){
+    @include size(4);
+  }
+  @include to(992px){
+    @include size(5);
+  }
+  @include to(768px){
+    @include size(7);
+  }
+  @include to(576px){
+    @include size(14);
+  }
+  &__link{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8em;
+    letter-spacing: -0.51px;
+    color: $gold;
+    text-decoration: none;
+
+  }
+  &__img{
+    margin-bottom: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__table{
+    margin-bottom: 75px;
+  }
+  &__button{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    font-size: 16px;
+    text-transform: unset;
+    line-height: 45px;
+  }
+}
+
+.filter-more-appartment:not(#some){
+  margin: 0 auto 30px;
+  display: block;
+  width: 59%;
+  height: 60px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 2em;
+  letter-spacing: -0.4px;
+  color: $gold;
+  background-color: $main-color;
+  border: none;
+  text-transform: none;
+  @include to(576px){
+    width: 80%;
+  }
+}
+
+.filter-info{
+  @include row-flex();
+  padding: 30px 0 0 0;
+  justify-content: space-around;
+  @include to(576px){
+    padding: 10px 0 0 0;
+    flex-direction: column;
+    align-items: center;
+    .filter-info--wrap {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+    }
+  }
+  &-btn{
+    margin: 0 5px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: -0.4px;
+    color: $gold;
+    text-decoration: none;
+  }
+  &__text{
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: -0.4px;
+    color: #999999;
+  }
+}
+
+
+.checkbox-item {
+  text-align: center;
+  .filter__checkbox:checked + label {
+    font-size: 14px;
+    background-color: $gold;
+    color: $bc;
+    cursor: pointer; }
+  input {
+    display: none;
+    visibility: hidden;
+    opacity: 0; }
+  label {
+    display: inline-block;
+    width: 46px;
+    height: 46px;
+    color: $gold;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 46px;
+    text-align: center;
+    background-color: rgba(176, 169, 111,0.3);
+    border: 1px solid $gold;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: all 0.4s;
+    &:hover {
+      font-size: 14px;
+      background-color: #f0f0f0;
+      cursor: pointer; } } }
+
+.range-item {
+  padding: 0 10px;
+  margin-bottom: 30px;
+  text-align: center;
+  @include to(1200px);
+    input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+      display: none; 
+    }
+  input[type="number"] {
+    width: 100px;
+    height: 46px;
+    text-align: center;
+    color: $gold;
+    background-color: rgba(176, 169, 111,0.3);
+
+    @include to(1400px) {
+      width: 80px; 
+    } 
+  }
+  &__title {
+    margin-bottom: 10px;
+    color: $gold;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 50px;
+  } 
+}
+
+.option {
+  &-block {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: $main-color;
+    @include to(576px){
+      justify-content: center;
+    }
+    .irs--flat .irs-line {
+      height: 2px;
+      background-color: $gold;
+    }
+    .irs--flat .irs-bar {
+      height: 2px;
+      background-color: $dirt;
+    }
+    .irs--flat .irs-handle {
+      width: 10px;
+      height: 10px;
+      background-color: $gold;
+    }
+    .irs--flat .irs-handle>i:first-child {
+      background-color: $gold;
+    }
+  }
+  &__rooms {
+    width: 33.33%;
+    @include to(992px){
+      width: 50%;
+    }
+    @include to(576px){
+      width: 100%;
+    }
+  }
+  &__floor {
+    width: 33.33%;
+    @include to(992px){
+      width: 50%;
+    }
+    @include to(576px){
+      width: 100%;
+    }
+  }
+  &__square {
+    width: 33.33%;
+    @include to(992px){
+      width: 50%;
+    }
+    @include to(576px){
+      width: 100%;
+    }
+  }
+  &__live {
+    width: 33.33%;
+    @include to(992px){
+      width: 50%;
+    }
+    @include to(576px){
+      width: 100%;
+    }
+  }
+  &__search-btn {
+    width: 33%;
+    align-self: center;
+    height: 60px;
+    line-height: 60px;
+    @include to(992px){
+      width: 50%;
+    }
+    @include to(576px){
+      margin: 0 0 10px 0;
+      width: 100%;
+    }
+  }
+  &__reset-btn {
+    width: 33.33%;
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: -0.4px;
+    color: $gold;
+    @include to(992px){
+      width: 50%;
+    }
+    @include to(576px){
+      margin: 0 0 10px 0;
+      width: 100%;
+    }
+    &:hover{
+      color: $wc;
+    }
+  }
+  &__results {
+    width: 33.33%;
+    color: #999999;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: -0.4px;
+    text-align: center;
+    @include to(992px){
+      width: 50%;
+    }
+    @include to(576px){
+      width: 100%;
+    }
+  } 
+}
+
+.back-to-link{
+  margin: 0 0 20px 0;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  svg{
+    margin: -3px 0 0 0;
+    transform: rotate(180deg);
+  }
+  .back-to-link-text{
+    margin-left: 10px;
+  }
+}

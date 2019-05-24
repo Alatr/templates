@@ -1,0 +1,225 @@
+.news-content-block{
+  @include row-flex();
+  justify-content: center;
+}
+.news-content{
+  @include col();
+  @include size(11);
+  margin: -30px 0 80px 0;
+  padding: 80px 80px 80px 40px;
+  background-color: $main-color;
+  @include to(1200px){
+    margin: -30px 0 20px 0;
+    padding: 50px 30px 30px 30px;
+    @include size(15);
+  }
+  @include to(576px){
+    padding: 50px 5px 30px 5px;
+    @include size(15);
+  }
+  p{
+    color: $wc;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.6em;
+    letter-spacing: 0.6px;
+    @include to(1200px){
+      font-size: 18px;
+    }
+    @include to(768px){
+      font-size: 14px;
+    }
+  }
+}
+
+.slaider-wrap{
+  @include col();
+  @include size(7);
+  @include to(1200px){
+    @include size(10);
+  }
+  @include to(992px){
+    @include size(10);
+  }
+  @include to(576px){
+    @include size(15);
+  }
+  position: relative;
+  &::after{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    content: '';
+    background-color: $gold;
+    
+  }
+}
+
+.slaider-button{
+  position: absolute;
+  top: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: $main-color;
+  border: none;
+  transition: 0.3s all;
+  &:hover{
+    border: 1px solid $gold;
+  }
+
+  svg{
+    width: 10px;
+    height: 18px;
+    fill: $gold;
+  }
+  &.prev{
+    left: 0;
+    z-index: 1;
+    transform-origin: top center;
+    transform: rotate(180deg) translateY(-50%);
+  }
+  &.next{
+    right: 0;
+    transform: rotate(0deg) translateY(-50%);
+  }
+}
+.slaider-button-more{
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32.1%;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  svg{
+    width: 15%;
+    height: 25%;
+    fill: $gold;
+    @include to(768px){
+      width: 100%;
+    }
+  }
+  &.prev{
+    left: 10px;
+    z-index: 1;
+    transform: rotate(180deg);
+    &:hover{
+      svg{
+        transition: 0.3s all;
+        margin-left: 5%;
+
+      }
+    }
+    @include to(768px){
+      left: 0;
+    }
+  }
+  &.next{
+    right: 10px;
+    transform: rotate(0deg);
+    @include to(768px){
+      right: 0;
+    }
+    &:hover{
+      svg{
+        transition: 0.3s all;
+        margin-left: 5%;
+
+      }
+    }
+    
+  }
+}
+
+.button-wrapper-news{
+  @include row-flex();
+  margin-bottom: 90px;
+  justify-content: center;
+  @include to(1200px){
+    margin-bottom: 20px;
+  }
+  @include to(650px){
+    flex-direction: column;
+    align-items: center;
+  }
+  svg{
+    margin-right: 10px;
+    width: 21px;
+    height: 15px;
+    fill: $gold;
+  }
+  a{
+    margin: 0 15px 0 15px;
+    display: flex;
+    width: 280px;
+    height: 60px;
+    background-color: $gold;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    text-decoration: none;
+    @include to(650px){
+      margin: 0 15px 15px 15px;
+      
+    }
+  }
+  a:hover{
+    svg{
+      fill: $wc;
+    }
+  }
+  .arrow2--back{
+    transform: rotate(180deg);
+  }
+}
+.more-news__title{
+  margin-bottom: 30px;
+}
+.news-data-wrap{
+  padding: 0 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.more-news-slaider-wrapper{
+  position: relative;
+  .news-item__img::after{
+    @include to(992px){
+      height: 7px;
+    }
+  }
+  .news-item__title{
+    padding: 0 5px;
+    @include to(992px){
+      font-size: 18px;
+    }
+  }
+  @include from(768px){
+    .slick-current + a:not(#some) {
+      filter: brightness(100%);
+    }
+    .slick-slide:not(.slick-center) {
+      position: relative;
+      filter: brightness(55%);
+    }
+  }
+  @include to(768px){
+    .slick-slide {
+      filter: brightness(100%);
+    }
+    .slick-slide:not(.slick-center) {
+      position: relative;
+      filter: brightness(55%);
+    }
+
+  }
+
+}

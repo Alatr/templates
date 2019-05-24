@@ -1,0 +1,129 @@
+.footer{
+  background-color: $main-color;
+  &__menu{
+    @include row-flex();
+    padding: 60px 0 60px 0;
+    justify-content: space-between;
+    @include to(1200px){
+      padding: 30px 0 30px 0;
+      justify-content: space-around;
+    }
+    @include to(576px){
+      justify-content: center;
+    }
+  }
+  .footer__menu > li:first-child {
+    @include to(768px){
+
+      @include col();
+      @include size(15);
+      img{
+        display: block;
+        margin: 0 auto 30px auto;
+      }
+    }
+
+  }
+  .footer__menu > li {
+    @include col();
+    @include size(3);
+    @include to(1200px){
+      @include col();
+      @include size(5);
+    }
+    @include to(992px){
+      @include col();
+      @include size(5);
+    }
+    @include to(768px){
+      @include col();
+      @include size(7.5);
+    }
+  }
+  &-logo{
+    width: 47px;
+    height: 55px;
+  }
+}
+
+.footer-copyright{
+  @include row-flex();
+  padding: 5px 0 45px 0;
+  justify-content: space-between;
+  font-family: $default-font;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.35px;
+  color: $text;
+  @include to(576px){
+    margin-left: 10px;
+    font-size: 10px;
+  }
+  &__link{
+    @include to(576px){
+      margin-right: 10px;
+    }
+  }
+}
+.sub-menu{
+  font-family: $default-font;
+  &__title{
+    margin: 0 0 30px 0;
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    color: $gold;
+    @include to(1200px){
+      margin: 15px 0 15px 0;
+      font-size: 13px;
+    }
+  }
+  li{
+    a{
+      font-size: 14px;
+      color: $text;
+      letter-spacing: -0.35px;
+      line-height: 2em;
+      text-decoration: none;
+      transition: 0.1s all;
+      &:hover{
+        color: $wc;
+      }
+      @include to(576px){
+        font-size: 10px;
+        line-height: 1.3em;
+      }
+    }
+  }
+  .font-color--white{
+    font-size: 14px;
+    color: $wc;
+    @include to(576px){
+      font-size: 10px;
+    }
+  }
+
+}
+.footer-order-call{
+  margin-top: 45px;
+  display: flex;
+  align-items: center;
+  &__text{
+    margin-right: 10px;
+    @include to(576px){
+      margin-right: 5px;
+      font-size: 11px;
+    }
+  }
+}
+.svg-metro, .svg-location{
+  margin-right: 5px;
+  width: 17px;
+  height: 13px;
+  fill: $gold;
+}
+
+.icon-item{
+  display: flex;
+  align-items: center;
+}
