@@ -41,4 +41,4 @@
 		</div>
 	</div>
 </div> -->
-<?php include('../icons/symbol_sprite.php'); ?>
+<?php include('icons/symbol_sprite.php'); ?>
