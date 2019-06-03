@@ -3,9 +3,6 @@
 <footer class="footer">
   <div class="container">
     <ul class="footer__menu">
-      <li>
-        <img class="footer-logo" src="img/f.svg" alt="" title="">
-      </li>
       <li class="has-children">
         <span class="sub-menu__title">О проекте:</span>
         <ul class="sub-menu">

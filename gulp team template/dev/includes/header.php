@@ -5,7 +5,7 @@
 
 	<meta charset="utf-8">
 
-	<title>Franklin</title>
+	<title>Nordica</title>
 	<meta name="description" content="">
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,125 +20,173 @@
 </head>
 
 <body>
-<button class="menu-btn">
 
-    <span class="menu-btn-text">Меню</span>
-    <span class="menu-btn-line">
-        <span></span>
-        <span></span>
-    </span>
-<!--    <span class="menu-btn-line"></span>-->
-    <!-- /.menu-line -->
-</button>
-<?php include('./img/icons/symbol_sprite.php'); ?>
-
+<?php include('./img/icons-sprite/symbol_sprite.php'); ?>
+<?php include('includes/loader.php'); ?>
 <header class="header">
-  <div class="container">
-    <div class="row">
-      <a href="/" class="logo">
-        <img src="img/logo.svg" alt="" title="">
-      </a>
-      <div class="header-left-wrapper">
-        <a href="./web.php" class="webcam-link">
-          <svg class="icon">
-            <use xlink:href="#icon-webcam"></use>
-          </svg>
-          Веб камера
-        </a>
-        <a href="tel:+38011111111" class="header__tel-link ringo">
-          <svg class="icon">
-            <use xlink:href="#icon-tel"></use>
-          </svg>
-          <span class="header__tel-text">(044) 324-23-23</span>
-        </a>
-        <a href="#popup-form" class="button button-size--md header__btn-call popup-with-form-js" data-modal-class="mfp-bg--purple" data-effect="mfp-3d-unfold">
-          <svg class="icon header-icon-envelop">
-            <use xlink:href="#icon-envel"></use>
-          </svg>
-          <span class="header__tel-text">Заказать звонок</span>
-          <span class="span-animation-1 span-animation"></span>
-          <span class="span-animation-2 span-animation"></span>
-          <span class="span-animation-3 span-animation"></span>
-          <span class="span-animation-4 span-animation"></span>
-        </a>
-        <div class="language">
-          <a class="lang--active" href="/">Рус</a>
-          <ul class="lang_dropdown">
-            <li class="lang__item"><a class="hover-underline underline--black" href="/">Укр</a></li>
-            <li class="lang__item"><a class="hover-underline underline--black" href="/">En</a></li>
+  <a href="/" class="logo"><img src="./img/logo-nordica.svg" alt="" title=""></a>
+  <ul class="header-menu tablet--hidden">
+      <li class="has-children" >
+          <span class="menu__title">Про комплекс:</span>
+          <ul class="sub-menu">
+              <li><a  href="./about.php">Про комплекс</a></li>
+              <li><a  href="#">Розташування</a></li>
+              <li><a  href="#">Генплан</a></li>
+              <li><a  href="./doc.php">Документи</a></li>
+              <li><a  href="./character.php">Характеристики</a></li>
           </ul>
-          <button  type="button" class="language-btn"></button>
-        </div>
-        <button type="button" class="menu-btn header__menu-btn">
-            <span class="menu-btn-text">Меню</span>
-            <span class="menu-btn-line">
-                <span></span>
-                <span></span>
-            </span>
-        </button>
-      </div>
-      <!-- /.header-left-wrapper -->
+      </li>
+      <li class="has-children" >
+          <span class="menu__title">Галерея</span>
+          <ul class="sub-menu">
+              <li><a  href="./gallery.php">Галерея</a></li>
+              <li><a  href="#">Рендери ЖК</a></li>
+              <li><a  href="#">3-D тур</a></li>
+          </ul>
+      </li>
+      <li class="has-children" >
+          <span class="menu__title">Планування</span>
+          <ul class="sub-menu">
+              <li><a  href="./develop.php">Застройщик</a></li>
+              <li><a  href="./stage.php">Ход строительства</a></li>
+              <li><a  href="./news.php">Новости</a></li>
+              <li><a  href="#">Вебкамера</a></li>
+              <li><a  href="./doc.php">Документация</a></li>
+          </ul>
+      </li>
+      <li class="has-children" >
+          <span class="menu__title">Ціни</span>
+          <ul class="sub-menu">
+              <li><a  href="#">Ціни на квартири</a></li>
+              <li><a  href="#">Ціни на комерційні приміщення</a></li>
+              <li><a  href="#">Ціни на паркінг</a></li>
+              <li><a  href="#">Умови придбання</a></li>
+          </ul>
+      </li>
+      <li  >
+          <span class="menu__title"><a href="./news.php">Новини</a></span>
+      </li>
+      <li  >
+          <span class="menu__title"><a href="./location.php">Контакти</a></span>
+      </li>
+  </ul>
+  <!-- /.menu-list -->
+  <div class="header-adress mobile--hidden">
+    <a href="tel:+380939168777" class="header-adress__tel">+38(044)91-68-777</a>
+    <div class="header-adress__time">
+      <b>Пн-Пт:</b> 9:00-20:00 <b>СБ-ВС:</b> Выходной
     </div>
+    <!-- /.header-adress-wrap -->
   </div>
+  <!-- /.header-adress -->
+  <div class="header-leng">
+    <a href="tel:+380939168777" class="svg-wrap from-mobile--hidden">
+      <svg>
+        <use xlink:href="#icon-tel"></use>
+      </svg>
+    </a>
+    <a href="#" class="svg-wrap mobile--hidden">
+      <svg>
+        <use xlink:href="#icon-facebook"></use>
+      </svg>
+    </a>
+    <div class="language">
+      <a class="lang--active" href="/">Рус</a>
+      <ul class="lang_dropdown">
+        <li class="lang__item"><a class="hover-underline underline-color--white" href="/">Укр</a></li>
+        <li class="lang__item"><a class="hover-underline underline-color--white" href="/">En</a></li>
+      </ul>
+      <button  type="button" class="language-btn"></button>
+    </div>
+    <button class="menu-btn desctop--hidden menu-btn-js" type="button">
+      <span class="menu-btn-text">Меню</span>
+      <span class="menu-btn-line">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+      </span>
+    </button>
+    <button class="close-menu-btn close-menu-btn-js visible--hidden" title="Закрыть" type="button"></button>
+  </div>
+  <!-- /.header-leng -->
 </header>
 <!-- /.header -->
-<div class="menu-wrap visible--hidden background-animate-menu">
-    <aside class="menu-aside">
-      <h2 class="section__title menu-aside__title bg-section-title">
-        <?php include('./includes/latter.php') ?>
-        <span class="wow fadeInUp">Меню</span></h2>
-      <ul class="menu-aside__list">
-        <li><a class="hover-underline underline-color--white" href="#">Главная</a></li>
-        <li><a class="hover-underline underline-color--white" href="#">Новости</a></li>
-        <li><a class="hover-underline underline-color--white" href="#">Галерея</a></li>
-      </ul>
-      <!-- /.menu-aside__title -->
-    </aside>
-    <!-- /.menu-aside -->
-    <ul class="menu-list">
-        <li class="has-children" >
-            <span class="menu__title">О проекте:</span>
-            <ul class="sub-menu">
-                <li><a class="hover-underline underline-color--dark" href="/build/location.php">О комплексе</a></li>
-                <li><a class="hover-underline underline-color--dark" href="/build/location.php">Расположение</a></li>
-                <li><a class="hover-underline underline-color--dark" href="/build/features.php">Преимущества</a></li>
-                <li><a class="hover-underline underline-color--dark" href="/build/values.php">Ценности</a></li>
-                <li><a class="hover-underline underline-color--dark" href="/build/infrastructure.php">Инфраструктура</a></li>
-                <li><a class="hover-underline underline-color--dark" href="/build/gallery.php">Галерея</a></li>
-            </ul>
-        </li>
-        <li class="has-children" >
-            <span class="menu__title">Выбрать квартиру:</span>
-            <ul class="sub-menu">
-                <li><a class="hover-underline underline-color--dark" href="/build/check-build.php">Выбор дома</a></li>
-                <li><a class="hover-underline underline-color--dark" href="/build/check-appartment.php">Выбрать по этажу</a></li>
-                <li><a class="hover-underline underline-color--dark" href="/build/filter.php">Выбрать по параметрам</a></li>
-                <li><a class="hover-underline underline-color--dark" href="/build/home.php">Однокомнатные квартиры</a></li>
-                <li><a class="hover-underline underline-color--dark" href="/build/home.php">Двухкомнатные квартиры</a></li>
-                <li><a class="hover-underline underline-color--dark" href="/build/home.php">Трехкомнатные квартиры</a></li>
+<div class="menu-wrap menu-wrap-js visible--hidden">
+<div class="main-titles">
+  <svg class="ribbon ">
+    <use class="wow fadeInDown" xlink:href="#icon-line"></use>
+  </svg>
+  <div class="banner-heading">
+    <span class="title-line">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+    <h2 class="main-title">Меню Nordica</h2>
+  </div>
+  <!-- /.banner-heading -->
+</div>
 
-            </ul>
-        </li>
-        <li class="has-children" >
-            <span class="menu__title">Строительство:</span>
-            <ul class="sub-menu">
-                <li><a class="hover-underline underline-color--dark" href="/build/develop.php">Застройщик</a></li>
-                <li><a class="hover-underline underline-color--dark" href="/build/stage.php">Ход строительства</a></li>
-                <li><a class="hover-underline underline-color--dark" href="/build/news.php">Новости</a></li>
-                <li><a class="hover-underline underline-color--dark" href="/build/camera.php">Вебкамера</a></li>
-                <li><a class="hover-underline underline-color--dark" href="/build/doc.php">Документация</a></li>
-            </ul>
-        </li>
-        <li class="has-children" >
-            <span class="menu__title">Контакты:</span>
-            <ul class="sub-menu">
-                <li><a class="hover-underline underline-color--dark" href="/build/location.php">Расположение</a></li>
-                <li><a class="hover-underline underline-color--dark" href="/build/contact.php">Контакты</a></li>
-            </ul>
-        </li>
-    </ul>
-    <!-- /.menu-list -->
-  <button class="close-menu-btn close-menu-btn-js" title="Закрыть" type="button"></button>
+<ul class="mobile-menu">
+      <li class="has-children" >
+          <span class="menu__title">Про комплекс</span>
+          <ul class="sub-menu">
+              <li><a class="hover-underline underline-color--white" href="./location.php">Переваги</a></li>
+              <li><a class="hover-underline underline-color--white" href="./location.php">Розташування</a></li>
+              <li><a class="hover-underline underline-color--white" href="./features.php">Генплан</a></li>
+              <li><a class="hover-underline underline-color--white" href="./doc.php">Документи</a></li>
+          </ul>
+      </li>
+      <li class="has-children" >
+          <span class="menu__title">Галерея</span>
+          <ul class="sub-menu">
+              <li><a class="hover-underline underline-color--white" href="./gallery.php">Галерея</a></li>
+              <li><a class="hover-underline underline-color--white" href="./check-appartment.php">Рендери ЖК</a></li>
+              <li><a class="hover-underline underline-color--white" href="./filter.php">3-D тур</a></li>
+          </ul>
+      </li>
+      <li class="has-children" >
+          <span class="menu__title">Квартири</span>
+          <ul class="sub-menu">
+              <li><a class="hover-underline underline-color--white" href="./develop.php">Будинок 1/2/3/4/5</a></li>
+              <li><a class="hover-underline underline-color--white" href="./stage.php">1-Кімнатні</a></li>
+              <li><a class="hover-underline underline-color--white" href="./stage.php">2-Кімнатні</a></li>
+              <li><a class="hover-underline underline-color--white" href="./stage.php">3-Кімнатні</a></li>
+              <li><a class="hover-underline underline-color--white" href="./stage.php">4-Кімнатні</a></li>
+          </ul>
+      </li>
+      <li class="has-children" >
+          <span class="menu__title">Ціни</span>
+          <ul class="sub-menu">
+              <li><a class="hover-underline underline-color--white" href="./location.php">Ціни на квартири</a></li>
+              <li><a class="hover-underline underline-color--white" href="./contact.php">Ціни на комерційні приміщення</a></li>
+              <li><a class="hover-underline underline-color--white" href="./contact.php">Ціни на паркінг</a></li>
+              <li><a class="hover-underline underline-color--white" href="./contact.php">Умови придбання</a></li>
+          </ul>
+      </li>
+      <li>
+          <a href="./develop.php" class="menu__title hover-underline underline-color--white">Забудовник</a>
+      </li>
+      <li >
+          <a href="#" class="menu__title hover-underline underline-color--white">Комерційна нерухомість</a>
+      </li>
+      <li >
+          <a href="./stage.php" class="menu__title hover-underline underline-color--white">Хід будівництва </a>
+      </li>
+      <li >
+          <a href="./news.php" class="menu__title hover-underline underline-color--white">Новини</a>
+      </li>
+      <li >
+          <a href="./location.php" class="menu__title hover-underline underline-color--white">Контакти</a>
+      </li>
+  </ul>
+  <!-- /.menu-list -->
 </div>
 <!-- /.site-section-block -->
 <?php include('./includes/forms.php'); ?>

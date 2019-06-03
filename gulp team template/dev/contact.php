@@ -1,7 +1,6 @@
 <?php include('includes/header.php'); ?>
 <div class="container">
   <h1 class="section__title bg-section-title">
-    <?php include('./includes/latter.php') ?>
     <span class="wow fadeInUp">Контакты</span>
   </h1>
   <ul class="breadcrumb">

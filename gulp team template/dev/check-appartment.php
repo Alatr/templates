@@ -1,7 +1,6 @@
 <?php include('includes/header.php'); ?>
 <div class="container">
   <h1 class="section__title bg-section-title">
-    <?php include('./includes/latter.php') ?>
     <span class="wow fadeInUp">Выбрать</span>
     <span class="wow fadeInUp _color--gold">квартиру</span>
   </h1>
@@ -176,7 +175,6 @@
 
 <?php include('./includes/footer.php') ?>
 
-<script src="js/libs.min.js"></script>
 <script src="js/assets/check-appartment.js"></script>
 </body>
 </html>

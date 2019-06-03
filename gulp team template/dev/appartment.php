@@ -1,7 +1,6 @@
 <?php include('includes/header.php'); ?>
 <div class="container">
   <h1 class="section__title bg-section-title">
-    <?php include('./includes/latter.php') ?>
     <span class="wow fadeInUp _color--gold">5а</span>
     <span class="wow fadeInUp">квартира</span>
   </h1>

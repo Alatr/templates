@@ -1,7 +1,7 @@
 <!-- Форма заказать звонок -->
 <form class="mainForm mfp-hide mfp-with-anim" id="popup-form">
   <h4 class="main-form__title section__title bg-section-title">
-    <?php include('./includes/latter.php') ?>
+    
     <span class="wow fadeInUp">Заказать звонок</span><button type="button" class="mfp-close" title="Закрыть"></button></h4>
 	<div class="mainForm-wrap requaired">
 		<span class="mainForm__text" data-defaultMessage="Имя:" data-errorMessage="Имя не заполнено">
@@ -44,7 +44,7 @@
 <!-- Форма узнать цену -->
 <form class="mainForm mfp-hide mfp-with-anim" id="price-form">
   <h4 class="main-form__title section__title bg-section-title">
-    <?php include('./includes/latter.php') ?>
+    
     Узнать цену<button type="button" class="mfp-close" title="Закрыть"></button></h4>
 	<div class="mainForm-wrap requaired">
 		<span class="mainForm__text" data-defaultMessage="Имя:" data-errorMessage="Имя не заполнено">
@@ -85,7 +85,7 @@
 <!-- Форма узнать цену -->
 <form class="mainForm mfp-hide mfp-with-anim" id="feedback-form">
   <h4 class="main-form__title section__title bg-section-title">
-    <?php include('./includes/latter.php') ?>
+    
     Форма обратной связи<button type="button" class="mfp-close" title="Закрыть"></button></h4>
 	<div class="mainForm-wrap requaired">
 		<span class="mainForm__text" data-defaultMessage="Имя:" data-errorMessage="Имя не заполнено">

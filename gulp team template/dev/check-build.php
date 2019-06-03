@@ -1,7 +1,6 @@
 <?php include('includes/header.php'); ?>
   <div class="container desctop--hidden">
     <h1 class="section__title bg-section-title">
-      <?php include('./includes/latter.php') ?>
       <span class="wow fadeInUp">Выбрать</span>
       <span class="wow fadeInUp">Этаж</span>
     </h1>
@@ -157,8 +156,6 @@
 
 
 <?php include('./includes/footer.php') ?>
-
-<script src="js/libs.min.js"></script>
 <script src="js/assets/check-build.js"></script>
 </body>
 </html>
