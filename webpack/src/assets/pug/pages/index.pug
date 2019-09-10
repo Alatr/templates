@@ -1,0 +1,162 @@
+extends ../layout/main
+
+
+	
+block meta
+	title= htmlWebpackPlugin.files.css
+	meta(name='description', content='')
+block head
+		link(rel='stylesheet', href=htmlWebpackPlugin.files.css[0])
+block scripts
+		script(src= 'https://maps.googleapis.com/maps/api/js?key=AIzaSyATtAtvM1V2tpg9HAcmQNKIrTV9hHwevOw')
+		script(src=htmlWebpackPlugin.files.js[1])
+	
+block content
+	section.main-screen
+		.container
+			.row
+				.main-screen-content
+					span(class="main-screen-content__img")
+						img(data-speed="85" src='./assets/img/home/img-1.jpg' class='js-parallax-item parallax-item')
+					span( class="main-screen-decor clippath")
+						span(class='wow decor-block-animation')
+					+icon('mouse')(class='main-screen__icon fill--mc')
+					+icon('logo')(class='main-screen__logo fill--bc')
+	section.second-section.container
+		.section
+			h2.section__title.second-section__title
+				span.section__title-word-wrapper
+					span(class="bg-color-animate wow bgc--mc")
+					span(class="section__title-word long-word font-opacity wow") Art
+				span.section__title-word-wrapper
+					span(data-wow-delay="0.3s" class="bg-color-animate wow bgc--mc2")
+					span(class='section__title-word font-opacity wow') of Living
+			.section__text-block
+				p 5 апреля 2018 года в рамках Большого архитектурного форума "Современные городские пространства. Архитектура  в исторической среде" была представлена концепция нового проекта SAGA Development –  SAGA City Space, который будет расположен в сердце Подола – на улице Сагайдачного, 18.
+				a(href="#").section__link
+					+icon('arrow')(class='section__arrow fill--mc2 btn-animation wow')
+			div( class='section__img ').clippath
+				img(data-speed="85" src='./assets/img/home/img-2.jpg' class='js-parallax-item parallax-item')
+	section.third-section.container
+		.section
+			h2.section__title.second-section__title
+				span.section__title-word-wrapper
+					span(class="bg-color-animate wow bgc--mc")
+					span(class="section__title-word long-word font-opacity wow") Серце
+				span.section__title-word-wrapper
+					span(data-wow-delay="0.3s" class="bg-color-animate wow bgc--mc2")
+					span(class='section__title-word font-opacity wow') подолу
+			.section-bloks
+				span(class="section-bloks__dekor")
+					span(class='wow decor-block-animation')
+				span(class="section-bloks__img")
+					img(data-speed="50" src='./assets/img/home/img-333.jpg' class='js-parallax-item parallax-item')
+			.section__text-block
+				p 5 апреля 2018 года в рамках Большого архитектурного форума "Современные городские пространства. Архитектура  в исторической среде" была представлена концепция нового проекта SAGA Development –  SAGA City Space, который будет расположен в сердце Подола – на улице Сагайдачного, 18.
+				a(href="#").section__link
+					+icon('arrow')(class='section__arrow fill--mc2 btn-animation wow')
+	.four-section-wrapper
+		section.four-section.container
+			.section
+				h2.section__title.four-section__title
+					span.section__title-word-wrapper
+						span(class="bg-color-animate wow bgc--mc")
+						span(class="section__title-word long-word font-opacity wow") Обрати
+					span.section__title-word-wrapper
+						span(data-wow-delay="0.3s" class="bg-color-animate wow bgc--mc4")
+						span(class='section__title-word font-opacity wow') апартаменти
+				.section-bloks
+					span(class='section-bloks__img align-self--bottom')
+						img(data-speed="75" src='./assets/img/home/img-4.jpg' class='js-parallax-item parallax-item')
+					span(class='section-bloks__img translate--y clippath')
+						img(data-speed="85" src='./assets/img/home/img-5.jpg' class='js-parallax-item parallax-item')
+	section.five-section.container
+		.section
+			h2.section__title.five-section__title
+				span.section__title-word-wrapper
+					span(class="bg-color-animate wow bgc--mc")
+					span(class="section__title-word  font-opacity wow") мистецтво
+				span.section__title-word-wrapper
+					span(data-wow-delay="0.3s" class="bg-color-animate wow bgc--mc2")
+					span(class='section__title-word long-word font-opacity wow') життя
+			.section-bloks
+				span(class=' section-bloks__img clippath')
+					img(data-speed="85" src='./assets/img/home/img-6.jpg' class='js-parallax-item parallax-item')
+			.section__text-block
+				h3.text-block__title Суспільний простір
+				p Територія вашого комфорту не обмежується вашими апартаментами. Кожна деталь важлива, коли мова йде про такий витвір мистецтва як SAGA apartments.
+				a(href="#").section__link
+					+icon('arrow')(class='section__arrow fill--mc2 btn-animation wow')
+	section.six-section.container
+		.section
+			h2.section__title.six-section__title
+				span.section__title-word-wrapper
+					span(class="bg-color-animate wow bgc--mc4")
+					span(class="section__title-word long-word font-opacity wow") Суттєві
+				span.section__title-word-wrapper
+					span(data-wow-delay="0.3s" class="bg-color-animate wow bgc--mc2")
+					span(class='section__title-word font-opacity wow') переваги
+			.section__text-block
+				p Урбан-анализ местности состоял в изучении исторического контекста участка, функционального назначения соседних зданий, движения легкового и грузового транспорта по окружающим улицам и возможности подъезда к участку автомобилей экстренных служб.
+				a(href="#").section__link
+					+icon('arrow')(class='section__arrow fill--mc2 btn-animation wow')
+			.section-bloks
+				span(class='section-bloks__img')
+					img(data-speed="85" src='./assets/img/home/img-7.jpg' class='js-parallax-item parallax-item')
+				span(class='section-bloks__dekor')
+					span(class='wow decor-block-animation bgc--mc')
+	.seven-section-wrapper
+		section.four-section.container
+			.section
+				h2.section__title.seven-section__title
+					span.section__title-word-wrapper
+						span(class="bg-color-animate wow bgc--mc")
+						span(class="section__title-word long-word font-opacity wow") День у
+					span.long-word saga
+					span.section__title-word-wrapper
+						span(data-wow-delay="0.3s" class="bg-color-animate wow bgc--mc2")
+						span(class='section__title-word font-opacity wow') apartments
+				p.seven-section-text Територія вашого комфорту не обмежується вашими апартаментами. Кожна деталь важлива, коли мова йде про такий витвір мистецтва як SAGA apartments.
+				.section-bloks
+					span(class='section-bloks__img translate--y clippath')
+						img(data-speed="85" src='./assets/img/home/img-8.jpg' class='js-parallax-item parallax-item')
+					span(class='section-bloks__img align-self--bottom')
+						img(data-speed="45" src='./assets/img/home/img-9.jpg' class='js-parallax-item parallax-item')
+	section.eight-section.container
+		.section
+			h2.section__title.eight-section__title
+				span.section__title-word-wrapper
+					span(class="bg-color-animate wow bgc--mc")
+					span(class="section__title-word  font-opacity wow") Зворотній
+				span.section__title-word-wrapper
+					span(data-wow-delay="0.3s" class="bg-color-animate wow bgc--mc2")
+					span(class='section__title-word long-word font-opacity wow') зв’язок
+			#map.map
+			form.main-form#form
+				.main-form-block.requaired
+					input(name="name" type="text" data-rule="empty pattern" data-patterns="email").main-form__input.main-form__input-requaired
+					span(data-defaultMessage="Ваше ім'я:*" data-errorMessage="Ваше ім'я не заповнено:").main-form-content
+						span.main-form__text Ваше ім'я:*
+				.main-form-block.requaired
+					input(name="tel" type="text" data-rule="empty").main-form__input.main-form__input-requaired
+					span(data-defaultMessage="Телефон:*" data-errorMessage="Телефон: не заповнено:").main-form-content
+						span.main-form__text Телефон:*
+				.main-form-block.requaired
+					input(name="message" type="text").main-form__input
+					span.main-form-content
+						span.main-form__text Повідомлення:
+				button.main-form__button
+					+icon('arrow')(class=' fill--mc2 btn-animation wow')
+
+
+
+
+
+block footer
+	footer.footer
+		include ../includes/footer.pug
+
+block header
+	header.header
+		include ../includes/header.pug
+

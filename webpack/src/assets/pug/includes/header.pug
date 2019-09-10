@@ -1,0 +1,13 @@
+.container
+	.row
+		ul.lang-list
+			li.lang-list__item ru
+			li.lang-list__item.active uk
+			li.lang-list__item en
+		.number-block
+			+icon('phone')(class='header__phone-icon fill--mc')
+			a(class='header__tel' href='tel:+1234567890')
+				span (044) 225 225 22
+			button(type="button").header__button-menu.menu-button
+				span.menu-button__text Меню
+				+icon('menu')(class='fill--mc2')
