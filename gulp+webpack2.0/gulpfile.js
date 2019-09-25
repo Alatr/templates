@@ -8,6 +8,7 @@ const browserSync = require('browser-sync').create();
 // css
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
+const autoprefixer = require('gulp-autoprefixer');
 // webpack
 const gulpWebpack = require('gulp-webpack');
 const webpack = require('webpack');
@@ -83,7 +84,7 @@ function server() {
     browserSync.init({
 				//server: paths.root,
 				notify: false,
-				proxy: "spac",
+				proxy: "voda",
     });
     browserSync.watch(paths.root + '/**/*.*', browserSync.reload);
 }
@@ -111,8 +112,12 @@ function styles() {
         title: 'SCSS',
         message: '<%= error.message %>' // вывод сообщения об ошибке
     }))
-    .pipe(sourcemaps.write())
+		.pipe(sourcemaps.write())
     .pipe(rename("main.min.css"))
+		// .pipe(autoprefixer({
+		// 	cascade: false,
+		// 	browsers: 'last 15 versions',
+		// }))
     .pipe(gulp.dest(paths.styles.dest))
 }
 

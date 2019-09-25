@@ -1,0 +1,93 @@
+// Global class
+.wow:not(#some){
+	opacity: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.js-input-focus:not(#some) {
+  .main-form__text{
+    transform: translateY(-110%);
+  }
+}
+.js-no-valid:not(#some)+.main-form-content {
+    svg{
+      fill: red;
+    }
+}
+.js-no-valid:not(#some){
+  border-bottom: 1px solid red;
+}
+.tablet--hidden:not(#some){
+  @include to(768px){
+    display: none;
+  }
+}
+.desctop--hidden:not(#some){
+  @include from(769px){
+    display: none;
+  }
+}
+
+.overflow--hidden:not(#some){
+	overflow: hidden;
+	margin-right: 10px;
+}
+
+.color--wc{
+  color: $wc;
+}
+.color--mc{
+  color: $mc;
+}
+.color--mc2{
+  color: $mc2;
+}
+.bgc--mc:not(#some){
+  background-color: $mc;
+}
+
+.tdn{
+	text-decoration: none;
+}
+
+.section-pading--top {
+	padding-top: 60px;
+}
+.svg-wrap {
+	width: 34px;
+	height: 34px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+}
+
+.svg-icon {
+	width: 60%;
+	height: 60%;
+	fill: $wc;
+	transition: all 0.3s;
+}
+
+.fill--mc svg {
+	fill: $mc;
+}
+
+.fill--bc svg {
+	fill: $text;
+}
+
+.fill--mc2 svg {
+	fill: $mc2;
+}
+
+

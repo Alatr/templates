@@ -1,0 +1,296 @@
+.row {
+	@include row-flex();
+}
+.page__inner {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	z-index: 30;
+	.page__content {
+		flex-grow: 1;
+	}
+	
+	.page__footer-wrapper {
+		flex-shrink: 0;
+	}
+}
+
+
+.pagination {
+  margin: auto auto 0;
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dots {
+    margin: 0 5px;
+    color: $mc;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 40px;
+  }
+
+  .page-numbers.current:not(.dots) {
+    margin: 0 5px;
+    line-height: 40px;
+    text-align: center;
+    color: $wc;
+    background-color: $mc;
+    border-radius: 50%;
+    text-decoration: none;
+
+    &:hover {
+      transform: translateY(0);
+    }
+  }
+
+  .page-numbers:not(.dots) {
+    margin: 0 5px;
+    display: flex;
+    width: 34px;
+    height: 34px;
+    justify-content: center;
+    align-items: center;
+    color: $mc;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
+  .prev,
+  .next {
+    display: flex;
+    transition: all 0.3s;
+
+    svg {
+      width: 20px;
+      height: 10px;
+      fill: $text;
+    }
+  }
+
+  .prev {
+    margin-right: 25px;
+
+    svg {
+      margin-left: -12px;
+      transform: rotate(90deg);
+    }
+
+    &:hover {
+      transform: translateX(-5px);
+    }
+  }
+
+  .next {
+    margin-left: 25px;
+    transform: translateX(0px) rotate(180deg);
+
+    svg {
+      margin-right: -12px;
+      transform: rotate(90deg);
+    }
+
+    &:hover {
+      transform: translateX(5px) rotate(180deg);
+    }
+  }
+}
+
+.breadcrumb {
+  z-index: 6;
+  margin: 0 0 20px 0;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  letter-spacing: 0.32px;
+
+  li {
+    margin: 0 5px;
+    display: flex;
+    align-items: center;
+    color: $mc;
+    list-style: none;
+
+    a {
+      margin-right: 10px;
+      color: $mc;
+      text-decoration: none;
+    }
+
+    &:last-child {
+      color: $text;
+    }
+  }
+}
+
+.button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  text-transform: uppercase;
+	color: $text;
+	background: transparent;
+	border: none;
+	&:hover{
+		.button__text{
+			margin-left: -45px;
+			letter-spacing: 0.2em;
+			color: $mc;
+		}
+		.button__sircle, svg{
+			stroke: $mc;
+
+		}
+	}
+	&__sircle, svg{
+		width: 80px;
+		height: 80px;
+		fill: transparent;
+		stroke: $text;
+		transform: rotate(45deg);
+		transition: all 0.3s;
+	}
+	&__text{
+		margin-left: -40px;
+		letter-spacing: 0.8em;
+		text-transform: uppercase;
+		transition: all 0.3s;
+	}
+}
+
+.section__title {
+	z-index: 5;
+	margin: 0 auto rem(70px);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	font-size: 30px;
+	line-height: 1.3em;
+}
+
+.hover-underline {
+  position: relative;
+
+  &::after {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    display: block;
+    height: 1px;
+    width: 100%;
+    content: '';
+    transform: scale(0);
+  }
+
+  &:hover {
+    &::after {
+      transition: 0.4s;
+      transform: scale(1);
+    }
+  }
+}
+
+.underline-color--white {
+  &::after {
+    background-color: $wc;
+  }
+}
+
+.underline-color--dark {
+  &::after {
+    background-color: $mc;
+  }
+}
+
+.main-form {
+	padding-bottom: 5%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-self: flex-end;
+	&__button {
+		display: flex;
+		flex-grow: 1;
+		justify-content: flex-end;
+		border: none;
+		background-color: transparent;
+		svg{
+			width: 52px;
+			height: 58px;
+		}
+	}
+	.main-form-block{
+
+		.icon, svg{
+			width: 14px;
+			height: 14px;
+		}
+	}
+	&-block {
+		position: relative;
+		margin-bottom: rem(50px);
+		display: flex;
+		width: 100%;
+		height: 36px;
+	}
+
+	&-content {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: flex;
+		align-items: center;
+		pointer-events: none;
+		.wrap-icon {
+			z-index: 5;
+			display: flex;
+			max-width: 36px;
+			max-height: 36px;
+			width: 36px;
+			height: 36px;
+			justify-content: center;
+			align-items: center;
+			background: #E4E7F0;
+			border-radius: 3px 0px 0px 3px;
+
+			svg {
+				width: 40%;
+				height: 40%;
+				fill: $mc;
+			}
+		}
+	}
+
+	&__text {
+		display: flex;
+		align-items: center;
+		font-weight: 500;
+		color: $text;
+		pointer-events: none;
+		transform: translateY(0%);
+		transition: all 0.4s;
+	}
+
+	&__input {
+		width: 100%;
+		height: 36px;
+		color: $mc;
+		background: transparent;
+		border: none;
+		border-bottom: 3px solid $mc3;
+	}
+}
+
+
