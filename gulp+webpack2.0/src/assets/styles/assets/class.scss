@@ -26,16 +26,7 @@
 .js-no-valid:not(#some){
   border-bottom: 1px solid red;
 }
-.tablet--hidden:not(#some){
-  @include to(768px){
-    display: none;
-  }
-}
-.desctop--hidden:not(#some){
-  @include from(769px){
-    display: none;
-  }
-}
+
 
 .overflow--hidden:not(#some){
 	overflow: hidden;
@@ -45,49 +36,14 @@
 .color--wc{
   color: $wc;
 }
+.color--bc{
+  color: $bc;
+}
 .color--mc{
   color: $mc;
-}
-.color--mc2{
-  color: $mc2;
-}
-.bgc--mc:not(#some){
-  background-color: $mc;
-}
-
-.tdn{
-	text-decoration: none;
-}
-
-.section-pading--top {
-	padding-top: 60px;
-}
-.svg-wrap {
-	width: 34px;
-	height: 34px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border-radius: 50%;
-}
-
-.svg-icon {
-	width: 60%;
-	height: 60%;
-	fill: $wc;
-	transition: all 0.3s;
 }
 
 .fill--mc svg {
 	fill: $mc;
 }
-
-.fill--bc svg {
-	fill: $text;
-}
-
-.fill--mc2 svg {
-	fill: $mc2;
-}
-
 
