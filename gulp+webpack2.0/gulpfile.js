@@ -259,13 +259,13 @@ function _styles() {
 		.pipe(gulp.dest(pathsProd.style.dest))
 }
 
-// fonts
+// FONTS
 function _fonts() {
 	return gulp.src(pathsProd.fonts.src)
 		.pipe(gulp.dest(pathsProd.fonts.dest))
 }
 
-// php
+// PHP
 function _static() {
 	return gulp.src(pathsProd.static.src)
 		.pipe(gulp.dest(pathsProd.static.dest))
