@@ -24,6 +24,9 @@ const imageminJpegRecompress = require('imagemin-jpeg-recompress');
 const imageminPngquant = require('imagemin-pngquant');
 //svg
 const svgSprites = require("gulp-svg-sprites");
+const cheerio = require('gulp-cheerio');
+const cleanSvg = require('gulp-cheerio-clean-svg');
+
 
 
 const paths = {
@@ -87,7 +90,7 @@ function server() {
     browserSync.init({
 				//server: paths.root,
 				notify: false,
-				proxy: "hub",
+				proxy: "carbon",
     });
     browserSync.watch(paths.root + '/**/*.*', browserSync.reload);
 }
@@ -135,6 +138,15 @@ function static() {
 // svg-sprite
 function svgSprite() {
 		return gulp.src(paths.svgSprite.src)
+				.pipe(cheerio({
+					run: function ($) {
+						$('[fill^="#"]').removeAttr('fill');
+						$('[style]').removeAttr('style');
+					},
+					parserOptions: {
+						xmlMode: false
+					}
+				}))
 				.pipe(svgSprites({
 					mode: "symbols",
 					preview: false,
