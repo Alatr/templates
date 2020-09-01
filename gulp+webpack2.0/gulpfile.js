@@ -19,7 +19,8 @@ const webpack = require('webpack');
 const webpackConfig = require('./webpack.config.js');
 //js
 const importFile = require('gulp-file-include');
-const uglify = require('gulp-uglify');
+const uglify = require('gulp-uglify-es').default;
+
 //img
 const cache = require('gulp-cache');
 const imagemin = require('gulp-imagemin');
